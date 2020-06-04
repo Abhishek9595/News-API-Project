@@ -19,7 +19,7 @@ function searchWeather(searchKey) {
           .then((weather1) => {
             //    console.log(weather);
                let weatherData = weather1.weather;
-               let main = weather1.main;
+               let mainTemp = weather1.main;
                output = [];
                for(let x of weatherData) {
                    output += `
@@ -31,10 +31,13 @@ function searchWeather(searchKey) {
                             <img src="http://openweathermap.org/img/wn/${x.icon}.png" alt="" /></p>
                             <p><span>Temp:</span>
                             <span class="temp">${weather1.main.temp-273.15}&deg;c</span></p>
+                            <p><span>Min Temp:</span>
+                            <span class="temp">${weather1.main.temp_min-273.15}&deg;c</span></p>
+                            <p><span>Max Temp:</span>
+                            <span class="temp">${weather1.main.temp_max-273.15}&deg;c</span></p>
 
                             <p class="float-left">Humidity: ${weather1.main.humidity}&deg;c</p>
-                            <p class="des float-left">${x.description}</p>
-                            <p class="des float-right">${x.main}</p>
+                            <p class="des float-left">${x.main}</p>
                         </div>
                        </div>
                    </div>

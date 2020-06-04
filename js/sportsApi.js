@@ -1,28 +1,27 @@
 let sportsApi = `https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=cd4d84c252ad4d5995cdeaa09f4d3545`;
 
 window.fetch(sportsApi)
-.then((sportsData) => {
-     sportsData.json()
-     .then((sports) => {
-         //console.log(sports.articles);
-          let sportsFeed = sports.articles;
-          let firstSportsBlock = sports.articles;
-          let sportsNewsBlockOne = firstSportsBlock[0];
-          document.getElementById("sportsFirstTemplate").innerHTML = `
+.then((sportData) => {
+    sportData.json()
+     .then((sport) => {
+          let sportFeed = sport.articles;
+          let firstSportBlock = sport.articles;
+          let sportNewsBlockOne = firstSportBlock[0];
+          document.getElementById("sportFirstTemplate").innerHTML = `
              <ul>
-                 <img src="${sportsNewsBlockOne.urlToImage}" alt="ImageOne">
+                 <img src="${sportNewsBlockOne.urlToImage}" alt="ImageOne">
              </ul>
           `;
             let output = [];
-            for(let sport of sportsFeed) {
+            for(let sportOf of sportFeed) {
                 output += `
                 <ul>
-                    <a href="${sport.url}" target="_blank">
-                    <li>${sport.title}</li>
+                    <a href="${sportOf.url}" target="_blank">
+                    <li>${sportOf.title}</li>
                     </a>
                 </ul>
                 `;
-             document.getElementById("sportsAllTemplate").innerHTML = output;
+             document.getElementById("sportAllTemplate").innerHTML = output;
          }
      })
      .catch((err) => console.log(err));

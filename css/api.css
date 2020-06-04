@@ -112,6 +112,13 @@ body {
     /* text-align: center; */
   }
 
+  #clock {
+    display: flex;
+    margin-right: 20px;
+    flex-direction: column;
+    color: #ffffff;
+  }
+
   #logoTag h6 {
     margin: 0;
     margin-bottom: 5px;
@@ -233,6 +240,25 @@ body {
   }
 
   #covidBlock section div h4 {
+    margin: 4px 10px 4px 0px;
+    padding: 7px;
+  }
+
+  #covidBlockIndia section {
+    display: flex;
+  }
+  #covidBlockIndia section div {
+    background: #fff;
+    padding: 7px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 5px 1px #eee;
+    margin: 4px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+  #covidBlockIndia section div h4 {
     margin: 4px 10px 4px 0px;
     padding: 7px;
   }

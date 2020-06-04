@@ -4,7 +4,7 @@ function clock(){
       let hours = date.getHours();
       let minutes = date.getMinutes();
       //let seconds = date.getSeconds();
-      let amorpm = hours >12 ? 'PM' : 'AM';
+      let amorpm = hours >= 12 ? 'PM' : 'AM';
 
       document.getElementById("clock").innerHTML = `
       <h6">${hours} : ${minutes} ${amorpm}</h6>
